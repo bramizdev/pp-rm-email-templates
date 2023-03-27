@@ -265,6 +265,10 @@ p {
   padding: 0.25rem 0.5rem;
 }
 
+.save-btn {
+  background-color: blue;
+}
+
 /* ---------- Email section ---------- */
 .email-container {
   background-color: var(--clr-neutral-100);

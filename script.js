@@ -347,3 +347,7 @@ $$emptyTemplateBtns.forEach((btn) => {
       currEmail.generateTemlate(savedData);
   });
 });
+
+document.querySelector('#email').addEventListener('click', (e) => {
+  copyToClipboard(e.target.textContent);
+});
