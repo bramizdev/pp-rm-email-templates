@@ -10,93 +10,96 @@
   <body>
     <main>
       <h1 class="title shadow">RM - Email templates</h1>
-      <form id="form" class="form shadow">
-        <div class="form-division">
-          <label for="consumer-name" class="form-field">
-            Consumer's name:
-            <input
-              class="input-field"
-              type="text"
-              id="consumer_name"
-              placeholder="Amanda Hugginkiss"
-            />
-          </label>
-          <label for="dealership" class="form-field">
-            Dealership:
-            <input
-              class="input-field"
-              type="text"
-              id="dealership"
-              placeholder="Ford Harrison_83746"
-            />
-          </label>
-          <label for="dealer-website" class="form-field">
-            Dealer's website:
-            <input
-              class="input-field"
-              type="text"
-              id="dealer-website"
-              placeholder="https://www.fordharrison.com/"
-            />
-          </label>
-          <label for="dealer-phone-number" class="form-field">
-            Dealer's phone number:
-            <input
-              class="input-field"
-              type="text"
-              id="dealer-phone-number"
-              placeholder="202-555-0173"
-            />
-          </label>
-          <button id="save-data" class="save-btn">Save</button>
+      <form id="form" class="form shadow" autocomplete="off">
+        <div class="form-cont">
+          <div class="form-division">
+            <label for="consumer-name" class="form-field">
+              Consumer's name:
+              <input
+                class="input-field"
+                type="text"
+                id="consumer_name"
+                placeholder="Amanda Hugginkiss"
+              />
+            </label>
+            <label for="dealership" class="form-field">
+              Dealership:
+              <input
+                class="input-field"
+                type="text"
+                id="dealership"
+                placeholder="Ford Harrison_83746"
+              />
+            </label>
+            <label for="dealer-website" class="form-field">
+              Dealer's website:
+              <input
+                class="input-field"
+                type="text"
+                id="dealer-website"
+                placeholder="https://www.fordharrison.com/"
+              />
+            </label>
+            <label for="dealer-phone-number" class="form-field">
+              Dealer's phone number:
+              <input
+                class="input-field"
+                type="text"
+                id="dealer-phone-number"
+                placeholder="202-555-0173"
+              />
+            </label>
+          </div>
+          <div class="form-division">
+            <label for="oem" class="form-field">
+              OEM:
+              <input
+                class="input-field"
+                type="text"
+                id="oem"
+                placeholder="Ford"
+              />
+            </label>
+            <label for="oem-phone-number" class="form-field">
+              OEM phone number:
+              <input
+                class="input-field"
+                type="text"
+                id="oem-phone-number"
+                placeholder="202-555-0173"
+              />
+            </label>
+            <label for="available-date" class="form-field">
+              Next available date:
+              <input
+                class="input-field"
+                type="text"
+                id="available-date"
+                placeholder="Thursday, November 1st at 9:00 AM"
+              />
+            </label>
+            <label for="vehicle" class="form-field">
+              Vehicle:
+              <input
+                class="input-field"
+                type="text"
+                id="vehicle"
+                placeholder="2020 Ford Pinto"
+              />
+            </label>
+            <label for="time-estimate" class="form-field">
+              Time estimate:
+              <input
+                class="input-field"
+                type="text"
+                id="time-estimate"
+                placeholder="Half a day"
+              />
+            </label>
+          </div>
         </div>
-        <div class="form-division">
-          <label for="oem" class="form-field">
-            OEM:
-            <input
-              class="input-field"
-              type="text"
-              id="oem"
-              placeholder="Ford"
-            />
-          </label>
-          <label for="oem-phone-number" class="form-field">
-            OEM phone number:
-            <input
-              class="input-field"
-              type="text"
-              id="oem-phone-number"
-              placeholder="202-555-0173"
-            />
-          </label>
-          <label for="available-date" class="form-field">
-            Next available date:
-            <input
-              class="input-field"
-              type="text"
-              id="available-date"
-              placeholder="Thursday, November 1st at 9:00 AM"
-            />
-          </label>
-          <label for="vehicle" class="form-field">
-            Vehicle:
-            <input
-              class="input-field"
-              type="text"
-              id="vehicle"
-              placeholder="2020 Ford Pinto"
-            />
-          </label>
-          <label for="time-estimate" class="form-field">
-            Time estimate:
-            <input
-              class="input-field"
-              type="text"
-              id="time-estimate"
-              placeholder="Half a day"
-            />
-          </label>
-        </div>
+        <button id="save-data" class="save-btn">Save</button>
+        <div class="succesful-alert hidden">Data saved!</div>
       </form>
       <section id="buttons-sections" class="sections-container shadow">
         <section data-category="rejections" class="cases-section">

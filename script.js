@@ -33,12 +33,7 @@ const formatDealership = (dealership) => {
   return dealershipArr[0];
 };
 
-const getInputData = () => {};
-
-const $saveData = $('#save-data');
-
-$saveData.addEventListener('click', (e) => {
-  e.preventDefault();
+const getInputData = () => {
   consumerName = formatName($consumername.value);
   dealership = formatDealership($dealership.value);
   dealersWebsite = $dealersWebsite.value;
@@ -48,6 +43,22 @@ $saveData.addEventListener('click', (e) => {
   date = $date.value;
   vehicle = $vehicle.value;
   timeEstimate = $timeEstimate.value;
+};
+
+const toggleAlert = (alert) => {
+  alert.classList.toggle('hidden');
+};
+
+const $saveData = $('#save-data');
+const $saveAlert = $('.succesful-alert');
+
+$saveData.addEventListener('click', (e) => {
+  e.preventDefault();
+  getInputData();
+  toggleAlert($saveAlert);
+  setTimeout(() => {
+    toggleAlert($saveAlert);
+  }, 2000);
 });
 
 const rejections = [
@@ -348,6 +359,34 @@ $$emptyTemplateBtns.forEach((btn) => {
   });
 });
 
+const reset = () => {
+  consumerName = '';
+  dealership = '';
+  dealersWebsite = '';
+  dealersPhone = '';
+  OEM = '';
+  OEMPhoneNumber = '';
+  date = '';
+  vehicle = '';
+  timeEstimate = '';
+
+  $consumername.value = '';
+  $dealership.value = '';
+  $dealersWebsite.value = '';
+  $dealersPhone.value = '';
+  $oem.value = '';
+  $oemPhone.value = '';
+  $date.value = '';
+  $vehicle.value = '';
+  $timeEstimate.value = '';
+
+  $emailSection.classList.add('hidden');
+  document.querySelector('#email').textContent = '';
+};
+
 document.querySelector('#email').addEventListener('click', (e) => {
   copyToClipboard(e.target.textContent);
+  setTimeout(() => {
+    reset();
+  }, 10000);
 });
