@@ -304,7 +304,7 @@ const displaySection = (arr, section) => {
     const fields = necessaryFields.join(', ');
     const html = `
       <li class="dispo-container">
-        <button class="btn btn-template" data-dispo="${id}">${disposition} <span class="necessary-fields">${fields}</span></button>
+        <button class="btn btn-template" data-dispo="${id}">${disposition} <small data-dispo="${id}" class="necessary-fields">${fields}</small></button>
       </li>
     `;
     section.insertAdjacentHTML('beforeend', html);
@@ -323,7 +323,6 @@ const $$emptyTemplateBtns = $$('.btn-template');
 
 $$emptyTemplateBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    console.log(e);
     $emailSection.classList.remove('hidden');
     const id = e.target.getAttribute('data-dispo');
     const currEmail = [
@@ -331,8 +330,6 @@ $$emptyTemplateBtns.forEach((btn) => {
       ...recallAppStatus,
       ...customerSupport,
     ].find((dispo) => dispo.id === id);
-
-    console.log(currEmail);
 
     const savedData = {
       consumerName,
