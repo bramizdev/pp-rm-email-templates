@@ -71,11 +71,9 @@ const rejections = [
     generateTemlate(obj) {
       return `Hi ${
         obj.consumerName ? obj.consumerName : '[CONSUMER’S NAME]'
-      },\n\nThanks for letting us know.\n\nIf you change your mind and want us to repair that recall at no cost to you, you can schedule a free repair appointment using this link: ${
+      },\n\nThank you for informing us. We will update our records based on your feedback.\n\nTo check if other vehicles in your household have open safety recalls, please visit our recall department webpage here: ${
         obj.dealersWebsite ? obj.dealersWebsite : '[LINK]'
-      } or call us directly at ${
-        obj.dealersPhone ? obj.dealersPhone : '[DEALERSHIP PHONE]'
-      }.\n\nIf you have any questions or need further assistance, please reply to this email and we’ll be happy to help.\n\nHave a wonderful day!\n\n${
+      }.\n\nIf you receive a future email notification pertaining to this specific recall, you may disregard it.\n\nHave a wonderful day!\n\n${
         obj.dealership ? obj.dealership : '[DEALERSHIP]'
       }\nRecall Department`;
     },
@@ -225,7 +223,7 @@ const recallAppStatus = [
   },
   {
     category: 'recall-app-status',
-    disposition: 'No active recalls',
+    disposition: 'Recall completed',
     id: 'ras3',
     necessaryFields: ['Consumer', 'Dealership'],
     generateTemlate(obj) {
@@ -253,7 +251,7 @@ const recallAppStatus = [
   },
   {
     category: 'recall-app-status',
-    disposition: 'Consumer already has s scheduled appointment',
+    disposition: 'Consumer verifying scheduled appointment',
     id: 'ras5',
     necessaryFields: ['Consumer', 'Vehicle', 'Date', 'Phone', 'Dealership'],
     generateTemlate(obj) {
@@ -281,7 +279,7 @@ const recallAppStatus = [
       },\n\nThis repair may take up to ${
         obj.timeEstimate ? obj.timeEstimate : '[HALF / FULL DAY]'
       }. This is an estimate, and your service advisor will provide a more accurate completion time when you arrive.\n\nWe encourage you to schedule your appointment right now via this link: ${
-        obj.date ? obj.date : '[DATE]'
+        obj.dealersWebsite ? obj.dealersWebsite : '[LINK]'
       }.\n\nYou can also call us directly at ${
         obj.dealersPhone ? obj.dealersPhone : '[DEALERSHIP PHONE]'
       }, or reply to this email with a preferred date/time and we’ll be happy to schedule you.\n\nHave a wonderful day!\n\n${
