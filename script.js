@@ -307,6 +307,7 @@ const $emailSection = $('#email-section');
 const $customerSupportSection = $('#customer-support-ul');
 const $recallAppStatusSection = $('#recall-appt-status-ul');
 const $form = $('#form');
+const $header = $('#header');
 
 const displaySection = (arr, section) => {
   arr.forEach(({ id, disposition, necessaryFields }) => {
@@ -352,8 +353,9 @@ $$emptyTemplateBtns.forEach((btn) => {
       timeEstimate,
     };
 
-    document.querySelector('#email').textContent =
-      currEmail.generateTemlate(savedData);
+    const $email = $('#email');
+    $email.textContent = currEmail.generateTemlate(savedData);
+    $email.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
@@ -380,6 +382,7 @@ const reset = () => {
 
   $emailSection.classList.add('hidden');
   document.querySelector('#email').textContent = '';
+  $header.scrollIntoView({ behavior: 'smooth' });
 };
 
 document.querySelector('#email').addEventListener('click', (e) => {
