@@ -67,7 +67,7 @@ const rejections = [
     disposition:
       'No longer owns / Never owned / Wrong email address / Destroyed or totaled',
     id: 'r1',
-    necessaryFields: ['Consumer', 'Website', 'Phone', 'Dealership'],
+    necessaryFields: ['Consumer', 'Website', 'Dealership'],
     generateTemlate(obj) {
       return `Hi ${
         obj.consumerName ? obj.consumerName : '[CONSUMER’S NAME]'
